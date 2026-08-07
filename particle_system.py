@@ -6,6 +6,7 @@ WIDTH, HEIGHT = 800, 600
 GRAVITY = 0.15
 PARTICLE_COUNT = 150
 
+
 class Particle:
     def __init__(self, x, y):
         self.x = x
@@ -34,12 +35,12 @@ class Particle:
         return self.life > 0
 
     def draw(self, screen):
-        alpha_color = (
+        color = (
             max(0, min(255, self.color[0])),
             max(0, min(255, self.color[1])),
             max(0, min(255, self.color[2])),
         )
-        pygame.draw.circle(screen, alpha_color, (int(self.x), int(self.y)), self.radius)
+        pygame.draw.circle(screen, color, (int(self.x), int(self.y)), self.radius)
 
 
 def main():
